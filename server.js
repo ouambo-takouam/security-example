@@ -1,10 +1,13 @@
 const fs = require('fs');
 const https = require('https');
 const express = require('express');
+const helmet = require('helmet');
 
 const app = express();
 
 const PORT = 3000;
+
+app.use(helmet());
 
 app.get('/', (req, res) => {
 	return res.status(200).send('helooooo');
